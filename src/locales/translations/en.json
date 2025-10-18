@@ -1,0 +1,46 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "done": "Done",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "retry": "Retry",
+    "close": "Close"
+  },
+  "permissions": {
+    "camera": {
+      "title": "Camera Permission",
+      "message": "We need access to your camera to take photos and videos.",
+      "denied": "Camera permission was denied. Please enable it in settings."
+    },
+    "location": {
+      "title": "Location Permission",
+      "message": "We need access to your location to provide location-based services.",
+      "denied": "Location permission was denied. Please enable it in settings."
+    },
+    "photoLibrary": {
+      "title": "Photo Library Permission",
+      "message": "We need access to your photo library to select and upload images.",
+      "denied": "Photo library permission was denied. Please enable it in settings."
+    }
+  },
+  "errors": {
+    "network": "Network error. Please check your connection.",
+    "server": "Server error. Please try again later.",
+    "unknown": "An unknown error occurred.",
+    "timeout": "Request timed out. Please try again."
+  },
+  "security": {
+    "insecureConnection": "Insecure connection detected",
+    "unauthorizedAccess": "Unauthorized access"
+  },
+  "privacy": {
+    "policyTitle": "Privacy Policy",
+    "policyLink": "View our privacy policy"
+  }
+}

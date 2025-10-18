@@ -1,0 +1,46 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "done": "Hecho",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "retry": "Reintentar",
+    "close": "Cerrar"
+  },
+  "permissions": {
+    "camera": {
+      "title": "Permiso de Cámara",
+      "message": "Necesitamos acceso a tu cámara para tomar fotos y videos.",
+      "denied": "Se denegó el permiso de cámara. Por favor habilítalo en la configuración."
+    },
+    "location": {
+      "title": "Permiso de Ubicación",
+      "message": "Necesitamos acceso a tu ubicación para proporcionar servicios basados en la ubicación.",
+      "denied": "Se denegó el permiso de ubicación. Por favor habilítalo en la configuración."
+    },
+    "photoLibrary": {
+      "title": "Permiso de Biblioteca de Fotos",
+      "message": "Necesitamos acceso a tu biblioteca de fotos para seleccionar y cargar imágenes.",
+      "denied": "Se denegó el permiso de biblioteca de fotos. Por favor habilítalo en la configuración."
+    }
+  },
+  "errors": {
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "server": "Error del servidor. Por favor intenta más tarde.",
+    "unknown": "Ocurrió un error desconocido.",
+    "timeout": "La solicitud expiró. Por favor intenta de nuevo."
+  },
+  "security": {
+    "insecureConnection": "Conexión insegura detectada",
+    "unauthorizedAccess": "Acceso no autorizado"
+  },
+  "privacy": {
+    "policyTitle": "Política de Privacidad",
+    "policyLink": "Ver nuestra política de privacidad"
+  }
+}
