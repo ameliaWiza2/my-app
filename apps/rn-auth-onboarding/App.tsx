@@ -8,22 +8,27 @@ import {store} from '@/store/store';
 import {useAppDispatch, useAppSelector} from '@/store/hooks';
 import {restoreSession} from '@/store/authSlice';
 import {hydrateFamily} from '@/store/familySlice';
+import {hydrateOnboarding} from '@/store/onboardingSlice';
 
 const SessionBootstrap: React.FC<PropsWithChildren> = ({children}) => {
   const dispatch = useAppDispatch();
   const isRestoring = useAppSelector(state => state.auth.isRestoring);
   const userId = useAppSelector(state => state.auth.user?.id);
-  const hydrationStatus = useAppSelector(state => state.family.hydrationStatus);
+  const familyHydrationStatus = useAppSelector(state => state.family.hydrationStatus);
+  const onboardingHydrationStatus = useAppSelector(state => state.onboarding.hydrationStatus);
 
   useEffect(() => {
     dispatch(restoreSession());
-  }, [dispatch]);
+    if (onboardingHydrationStatus === 'idle') {
+      dispatch(hydrateOnboarding());
+    }
+  }, [dispatch, onboardingHydrationStatus]);
 
   useEffect(() => {
-    if (userId && hydrationStatus === 'idle') {
+    if (userId && familyHydrationStatus === 'idle') {
       dispatch(hydrateFamily({userId}));
     }
-  }, [dispatch, userId, hydrationStatus]);
+  }, [dispatch, userId, familyHydrationStatus]);
 
   if (isRestoring) {
     return (

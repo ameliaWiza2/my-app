@@ -10,6 +10,9 @@ import FamilyJoinScreen from '@/screens/onboarding/FamilyJoinScreen';
 import FamilyConfirmationScreen from '@/screens/onboarding/FamilyConfirmationScreen';
 import HomeScreen from '@/screens/home/HomeScreen';
 import {useAppSelector} from '@/store/hooks';
+import RoleSelectionScreen from '@/screens/onboarding/RoleSelectionScreen';
+import PregnancyStatusScreen from '@/screens/onboarding/PregnancyStatusScreen';
+import LMPEEDDScreen from '@/screens/onboarding/LMPEEDDScreen';
 
 export type AuthStackParamList = {
   Welcome: undefined;
@@ -19,6 +22,9 @@ export type AuthStackParamList = {
 };
 
 export type OnboardingStackParamList = {
+  RoleSelection: undefined;
+  PregnancyStatus: undefined;
+  LMPEEDD: undefined;
   FamilyChoice: undefined;
   FamilyCreate: undefined;
   FamilyJoin: undefined;
@@ -60,6 +66,21 @@ const AuthNavigator = () => (
 
 const OnboardingNavigator = () => (
   <OnboardingStack.Navigator>
+    <OnboardingStack.Screen
+      name="RoleSelection"
+      component={RoleSelectionScreen}
+      options={{title: 'Select your role'}}
+    />
+    <OnboardingStack.Screen
+      name="PregnancyStatus"
+      component={PregnancyStatusScreen}
+      options={{title: 'Pregnancy status'}}
+    />
+    <OnboardingStack.Screen
+      name="LMPEEDD"
+      component={LMPEEDDScreen}
+      options={{title: 'LMP and EDD'}}
+    />
     <OnboardingStack.Screen
       name="FamilyChoice"
       component={FamilyChoiceScreen}
