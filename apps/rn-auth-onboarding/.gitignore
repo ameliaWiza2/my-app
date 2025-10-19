@@ -1,0 +1,13 @@
+node_modules/
+yarn.lock
+package-lock.json
+.expo/
+.expo-shared/
+dist/
+build/
+.DS_Store
+coverage/
+android/
+ios/
+.nyc_output
+.env

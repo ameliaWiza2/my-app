@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "jsx": "react",
+    "lib": ["es2017"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "App.tsx", "index.js", "jest.setup.js", "__tests__"],
+  "exclude": ["node_modules"]
+}
