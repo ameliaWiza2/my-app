@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# React Native
+android/
+ios/
+.expo/
+.expo-shared/
+.bundle/
+index.android.bundle
+index.ios.bundle
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Metro
+*.metro-bundler-cache*
+*.tmp
+
+# Buck
+.buckconfig.local
+buck-out/
+.buckd/
+
+# Xcode
+*.xcodeproj/*.xcworkspace
+*.xcuserstate
+*.xcscmblueprint
+
+# Gradle
+.gradle/
+build/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Env
+.env
+.env.local
+.env.*
