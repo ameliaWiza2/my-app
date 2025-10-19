@@ -1,0 +1,46 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "done": "Terminé",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "retry": "Réessayer",
+    "close": "Fermer"
+  },
+  "permissions": {
+    "camera": {
+      "title": "Permission de Caméra",
+      "message": "Nous avons besoin d'accéder à votre caméra pour prendre des photos et des vidéos.",
+      "denied": "L'autorisation de la caméra a été refusée. Veuillez l'activer dans les paramètres."
+    },
+    "location": {
+      "title": "Permission de Localisation",
+      "message": "Nous avons besoin d'accéder à votre localisation pour fournir des services basés sur la localisation.",
+      "denied": "L'autorisation de localisation a été refusée. Veuillez l'activer dans les paramètres."
+    },
+    "photoLibrary": {
+      "title": "Permission de Bibliothèque de Photos",
+      "message": "Nous avons besoin d'accéder à votre bibliothèque de photos pour sélectionner et télécharger des images.",
+      "denied": "L'autorisation de la bibliothèque de photos a été refusée. Veuillez l'activer dans les paramètres."
+    }
+  },
+  "errors": {
+    "network": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "server": "Erreur serveur. Veuillez réessayer plus tard.",
+    "unknown": "Une erreur inconnue s'est produite.",
+    "timeout": "La demande a expiré. Veuillez réessayer."
+  },
+  "security": {
+    "insecureConnection": "Connexion non sécurisée détectée",
+    "unauthorizedAccess": "Accès non autorisé"
+  },
+  "privacy": {
+    "policyTitle": "Politique de Confidentialité",
+    "policyLink": "Voir notre politique de confidentialité"
+  }
+}
