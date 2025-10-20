@@ -1,9 +1,10 @@
-import React, {useMemo, useRef, useState} from 'react';
-import {Alert, View, Text, TextInput, StyleSheet, Pressable} from 'react-native';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
+import {Alert, View, Text, TextInput, StyleSheet, Pressable, Switch, Platform} from 'react-native';
 import {FamilyRole, canEditPregnancy} from '../utils/rolePermissions';
 import {PregnancyData, calculateGestationalAge} from '../services/pregnancy/ga';
 import {PregnancyService} from '../services/pregnancy/PregnancyService';
 import {NotificationsService} from '../services/notifications';
+import { HealthService } from '../services/health/HealthService';
 
 export type SettingsPregnancySectionProps = {
   role: FamilyRole;
@@ -15,12 +16,37 @@ export const SettingsPregnancySection: React.FC<SettingsPregnancySectionProps> =
   const [lmp, setLmp] = useState(initial.lmpDate ?? '');
   const [manualEDD, setManualEDD] = useState(initial.manualEDD ?? '');
   const [saving, setSaving] = useState(false);
+  const [syncEnabled, setSyncEnabled] = useState(false);
+  const [writebackEnabled, setWritebackEnabled] = useState(false);
   const prevEddRef = useRef<string | null>(null);
 
   const calc = useMemo(() => calculateGestationalAge(new Date(), {lmpDate: lmp || undefined, manualEDD: manualEDD || undefined}), [lmp, manualEDD]);
   const derivedEDD = calc.edd ? calc.edd.toISOString() : null;
 
   const editable = canEditPregnancy(role);
+
+  useEffect(() => {
+    (async () => {
+      setSyncEnabled(await HealthService.isSyncEnabled());
+      setWritebackEnabled(await HealthService.isPregnancyWritebackEnabled());
+    })();
+  }, []);
+
+  const onToggleSync = async (val: boolean) => {
+    const applied = await HealthService.setSyncEnabled(val);
+    setSyncEnabled(applied);
+    if (!applied && val) {
+      Alert.alert('Health sync disabled', 'Unable to enable health sync due to missing permissions.');
+    }
+  };
+
+  const onToggleWriteback = async (val: boolean) => {
+    const applied = await HealthService.setPregnancyWritebackEnabled(val);
+    setWritebackEnabled(applied);
+    if (!applied && val) {
+      Alert.alert('Write-back disabled', 'Unable to enable write-back due to missing permissions.');
+    }
+  };
 
   const handleSave = async () => {
     if (!editable) return;
@@ -82,6 +108,32 @@ export const SettingsPregnancySection: React.FC<SettingsPregnancySectionProps> =
       <View style={styles.summary}>
         <Text>Source: {calc.source === 'lmp' ? 'LMP' : calc.source === 'manual' ? 'Manual' : 'Unknown'}</Text>
         <Text>EDD: {derivedEDD ? new Date(derivedEDD).toDateString() : 'Unknown'}</Text>
+      </View>
+
+      <View style={styles.row} accessibilityLabel="Health data sync">
+        <Text style={styles.label}>{Platform.OS === 'ios' ? 'Apple Health Sync' : 'Google Fit Sync'}</Text>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+          <Text>{syncEnabled ? 'On' : 'Off'}</Text>
+          <Switch
+            accessibilityLabel={Platform.OS === 'ios' ? 'Apple Health sync toggle' : 'Google Fit sync toggle'}
+            value={syncEnabled}
+            onValueChange={onToggleSync}
+            disabled={saving}
+          />
+        </View>
+      </View>
+
+      <View style={styles.row} accessibilityLabel="Pregnancy write-back">
+        <Text style={styles.label}>Write pregnancy data to {Platform.OS === 'ios' ? 'Health' : 'Health (unsupported)'}</Text>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+          <Text>{writebackEnabled ? 'On' : 'Off'}</Text>
+          <Switch
+            accessibilityLabel="Pregnancy write-back toggle"
+            value={writebackEnabled}
+            onValueChange={onToggleWriteback}
+            disabled={saving || !syncEnabled || Platform.OS !== 'ios'}
+          />
+        </View>
       </View>
 
       <Pressable

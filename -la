@@ -1,0 +1,26 @@
+* [33m0b156d5[m[33m ([m[1;31morigin/feat-pregnancy-health-tracking-module[m[33m)[m feat(pregnancy): add health metrics, charts, reminders, and insights modules
+[31m|[m * [33m59807b7[m[33m ([m[1;31morigin/feat-family-management-permissions[m[33m)[m feat(family-management): add family member roles, permissions, audit, notifications, and tests
+[31m|[m[31m/[m  
+[31m|[m * [33m0e06df5[m[33m ([m[1;31morigin/feat/android-health-integration-google-samsung-huawei[m[33m)[m chore(gitignore): update and extend .gitignore for monorepo and platform coverage
+[31m|[m[31m/[m  
+* [33mb5c61bf[m[33m ([m[1;34mgrafted[m[33m, [m[1;36mHEAD[m[33m -> [m[1;32mfeat/healthkit-sync-pregnancy-writeback-android-fallback-tests-docs[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Merge pull request #10 from ameliaWiza2/merge-remote-branches-into-main-squash-ci-conflict-handling
+* [33m8412718[m[33m ([m[1;31morigin/merge-remote-branches-into-main-squash-ci-conflict-handling[m[33m)[m docs: update MERGE_SUMMARY with additional branch statuses and next steps [ci skip]
+*   [33m8a098b9[m Merge pull request #8 from ameliaWiza2/feat-pregnancy-ga-service-role-perms-settings-edit-lmp-edd
+[35m|[m[36m\[m  
+[35m|[m * [33m16b0c85[m feat(pregnancy): integrate GA, permissions, and settings management
+* [36m|[m   [33m42d23fd[m Merge pull request #9 from ameliaWiza2/feat-role-selection-pregnancy-lmp-edd-naegele-rule-timezone-override
+[36m|[m[1;32m\[m [36m\[m  
+[36m|[m [1;32m|[m[36m/[m  
+[36m|[m[36m/[m[1;32m|[m   
+[36m|[m * [33m3da30eb[m[33m ([m[1;31morigin/feat-role-selection-pregnancy-lmp-edd-naegele-rule-timezone-override[m[33m)[m feat(onboarding): add role selection and pregnancy status including LMP/EDD capture
+[36m|[m[36m/[m  
+* [33m25485fe[m ci: trigger workflows on main
+* [33md8e31a4[m docs: add MERGE_SUMMARY.md for branch consolidation [ci skip]
+* [33m3bb867a[m chore: import origin/feat-ai-health-chat-integration into apps/ai-health-chat via squash-like archive [ci skip]
+* [33m752090c[m chore: import origin/feat/family-task-center-assignments-notifications into apps/task-center via squash-like archive [ci skip]
+* [33mde519ab[m chore: import origin/feat-ui-enhance-dark-mode into apps/task-center-dark-mode via squash-like archive [ci skip]
+* [33mcfbd2d5[m chore: import origin/feat/auth-family-onboarding into apps/rn-auth-onboarding via squash-like archive [ci skip]
+* [33ma23f2e0[m chore: import origin/feat-core-architecture-navigation-state-theme-ui-foundation into apps/rn-core via squash-like archive [ci skip]
+* [33m7e5ea7d[m chore: import origin/chore/bootstrap-react-native-ts-tooling into apps/rn-bootstrap via squash-like archive [ci skip]
+* [33med0c59d[m squash: merge origin/hardening-qa-release-readiness into main as primary app (monorepo base) [ci skip]}
+* [33m7a780c4[m Initial commit
