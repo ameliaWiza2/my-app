@@ -26,3 +26,16 @@ Validation
 
 Next steps (optional)
 - Consider adopting a monorepo tool (e.g., Turborepo/Nx/Yarn workspaces) and adding selective CI for apps/* as needed.
+
+Additional status (post-consolidation)
+- Already integrated earlier via PR and now cleaned up:
+  - feat-pregnancy-ga-service-role-perms-settings-edit-lmp-edd (merged by PR; remote branch deleted)
+- Unmerged branch requiring review:
+  - feat-role-selection-pregnancy-lmp-edd-naegele-rule-timezone-override
+    - Non-trivial change that removes pregnancy-related components/services from the root app which were previously integrated via PR.
+    - Recommendation: open a PR to main with clear notes and obtain product decision whether to:
+      - Keep pregnancy features at the root, or
+      - Remove them from root (and/or move them under apps/) and proceed with the deletion changes.
+
+CI/build validation
+- GitHub Actions workflows are present under .github/workflows and will run on main (lint, tests with coverage, e2e, Android/iOS builds). Please verify run results in GitHub Actions.
